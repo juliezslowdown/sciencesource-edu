@@ -3,20 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Field Notes — a working design concept</title>
-<!-- Reframed: this is a marketing/discovery blog surfacing the catalog, not a course-reference resource. -->
+<title>Science Source: Education — a working design concept</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper: #EAE6D9;
-    --paper-raised: #F2EFE4;
-    --ink: #1B3450;
-    --collegiate: #2F6FB0;
-    --moss: #4B5D3A;
-    --rust: #A8462F;
-    --line: #C9C2AC;
-    --gold: #9C7A3C;
+    --paper: #F6F6F2;
+    --paper-raised: #FFFFFF;
+    --ink: #14233B;
+    --collegiate: #2A5F98;
+    --gold: #A9832F;
+    --line: #DCDCD4;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -25,209 +22,171 @@
     background:var(--paper);
     color:var(--ink);
     font-family:"Source Serif 4", Georgia, serif;
-    line-height:1.6;
+    line-height:1.65;
   }
-  .wrap{max-width:840px;margin:0 auto;padding:0 28px;}
-
-  /* texture: faint cross-hatch on the page background */
-  body::before{
-    content:"";
-    position:fixed; inset:0; z-index:-1;
-    background-image:
-      repeating-linear-gradient(0deg, rgba(28,43,51,0.025) 0 1px, transparent 1px 3px),
-      repeating-linear-gradient(90deg, rgba(28,43,51,0.015) 0 1px, transparent 1px 3px);
-  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 28px;}
 
   /* header */
-  header{
-    padding:36px 0 22px;
-    border-bottom:1px solid var(--line);
-  }
+  header{padding:40px 0 0;}
   .site-mark{
-    display:flex; align-items:center; gap:12px;
-    justify-content:space-between;
-    flex-wrap:wrap;
+    display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:16px;
+    padding-bottom:22px;
   }
-  .mark-group{display:flex; align-items:center; gap:12px;}
+  .mark-group{display:flex; align-items:center; gap:13px;}
   .brand{
-    font-family:"Fraunces", serif;
+    font-family:"Cormorant Garamond", serif;
     font-weight:600;
-    font-size:1.5rem;
+    font-size:1.55rem;
     letter-spacing:0.01em;
   }
-  .brand small{
-    display:block;
-    font-family:"IBM Plex Mono", monospace;
-    font-weight:400;
-    font-size:0.62rem;
-    letter-spacing:0.16em;
-    color:var(--moss);
-    text-transform:uppercase;
-    margin-top:2px;
-  }
-  nav{display:flex; gap:22px; font-family:"IBM Plex Mono",monospace; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase;}
+  nav{display:flex; gap:26px; font-family:"IBM Plex Mono",monospace; font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase;}
   nav a{color:var(--ink); text-decoration:none; border-bottom:1px solid transparent; padding-bottom:2px;}
   nav a:hover, nav a:focus-visible{border-bottom-color:var(--collegiate); color:var(--collegiate);}
 
+  /* signature device: the collegiate stripe */
+  .stripe{height:5px; width:100%; background:linear-gradient(to bottom, var(--ink) 0 60%, var(--gold) 60% 100%);}
+
   /* hero */
-  .hero{padding:56px 0 44px; border-bottom:1px solid var(--line); position:relative;}
+  .hero{padding:60px 0 48px; border-bottom:1px solid var(--line);}
   .hero-tag{
     font-family:"IBM Plex Mono", monospace;
-    font-size:0.72rem;
-    letter-spacing:0.14em;
+    font-size:0.68rem;
+    letter-spacing:0.16em;
     text-transform:uppercase;
     color:var(--collegiate);
     display:flex; align-items:center; gap:10px;
-    margin-bottom:18px;
+    margin-bottom:20px;
   }
   .hero-tag::before{content:""; width:26px; height:1px; background:var(--collegiate);}
   .hero h1{
-    font-family:"Fraunces", serif;
-    font-weight:500;
-    font-size:clamp(2.1rem, 4.4vw, 3.1rem);
-    line-height:1.12;
-    margin:0 0 20px;
-    max-width:16ch;
+    font-family:"Cormorant Garamond", serif;
+    font-weight:600;
+    font-size:clamp(2.3rem, 4.6vw, 3.4rem);
+    line-height:1.15;
+    margin:0 0 22px;
+    max-width:54ch;
+    letter-spacing:0.002em;
   }
-  .hero p{max-width:52ch; color:#3a4a52; font-size:1.05rem;}
-  .hero-illustration{
-    position:absolute; right:0; top:40px; width:150px; opacity:0.85;
-  }
-  @media (max-width:760px){ .hero-illustration{display:none;} }
+  .hero p{max-width:54ch; color:#33455c; font-size:1.08rem;}
 
-  /* section label — used above the sample post and the archive */
+  /* section label */
   .section-label{
     display:flex; align-items:center; gap:12px;
     font-family:"IBM Plex Mono", monospace;
-    font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase;
-    color:var(--moss);
-    margin:52px 0 20px;
+    font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--gold);
+    margin:56px 0 22px;
   }
   .section-label::after{content:""; flex:1; height:1px; background:var(--line);}
 
-  /* specimen card — the signature element for a single post */
-  .specimen{
+  /* journal card — signature element for a single post */
+  .journal-card{
     background:var(--paper-raised);
     border:1px solid var(--line);
-    padding:0;
-    position:relative;
-    margin-bottom:40px;
+    margin-bottom:44px;
   }
-  .specimen::before{
-    /* dog-ear / torn corner tab */
-    content:"";
-    position:absolute; top:0; right:0;
-    width:0; height:0;
-    border-style:solid;
-    border-width:0 34px 34px 0;
-    border-color:transparent var(--paper) transparent transparent;
-    filter:drop-shadow(-1px 1px 0 var(--line));
+  .card-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:18px 30px 14px;
+    border-bottom:1px solid var(--line);
   }
-  .specimen-head{
-    display:flex; justify-content:space-between; align-items:flex-start;
-    padding:20px 26px 16px;
-    border-bottom:1px dashed var(--line);
-  }
-  .specimen-id{
+  .card-id{
     font-family:"IBM Plex Mono", monospace;
-    font-size:0.68rem; letter-spacing:0.1em; color:var(--moss); text-transform:uppercase;
+    font-size:0.66rem; letter-spacing:0.1em; color:var(--collegiate); text-transform:uppercase;
   }
-  .specimen-id span{color:var(--ink); opacity:0.55;}
-  .specimen-stamp{
+  .card-id span{color:var(--ink); opacity:0.5;}
+  .card-date{
     font-family:"IBM Plex Mono", monospace;
-    font-size:0.62rem; letter-spacing:0.08em;
-    color:var(--rust);
-    border:1px solid var(--rust);
-    padding:3px 8px;
-    transform:rotate(-3deg);
+    font-size:0.64rem; letter-spacing:0.08em;
+    color:#6b7688; text-transform:uppercase;
+  }
+  .card-body{padding:26px 30px 32px;}
+  .card-body h2{
+    font-family:"Cormorant Garamond", serif; font-weight:600;
+    font-size:1.7rem; margin:0 0 8px; line-height:1.22;
+  }
+  .card-meta{
+    font-family:"IBM Plex Mono", monospace; font-size:0.66rem;
+    color:#6b7688; margin-bottom:18px; letter-spacing:0.03em;
     text-transform:uppercase;
-    white-space:nowrap;
   }
-  .specimen-body{padding:22px 26px 28px;}
-  .specimen-body h2{
-    font-family:"Fraunces", serif; font-weight:500;
-    font-size:1.5rem; margin:0 0 6px; line-height:1.25;
-  }
-  .specimen-meta{
-    font-family:"IBM Plex Mono", monospace; font-size:0.7rem;
-    color:#5a6a70; margin-bottom:16px; letter-spacing:0.02em;
-  }
-  .specimen-meta .dot{margin:0 8px; opacity:0.5;}
-  .specimen-body p{margin:0 0 14px; color:#2c3a41; font-size:0.98rem;}
+  .card-meta .dot{margin:0 8px; opacity:0.5;}
+  .card-body p{margin:0 0 15px; color:#26374c; font-size:0.98rem;}
 
   .fig{
-    margin:20px 0;
+    margin:22px 0;
     border:1px solid var(--line);
     background:
-      repeating-linear-gradient(45deg, rgba(28,43,51,0.05) 0 6px, transparent 6px 12px),
+      repeating-linear-gradient(0deg, rgba(20,35,59,0.05) 0 1px, transparent 1px 28px),
+      repeating-linear-gradient(90deg, rgba(20,35,59,0.05) 0 1px, transparent 1px 28px),
       var(--paper);
-    height:170px;
-    display:flex; align-items:center; justify-content:center;
+    height:180px;
   }
   .fig-caption{
-    font-family:"IBM Plex Mono", monospace; font-size:0.66rem;
-    letter-spacing:0.06em; color:#5a6a70; text-transform:uppercase;
-    margin-top:8px;
+    font-family:"IBM Plex Mono", monospace; font-size:0.64rem;
+    letter-spacing:0.06em; color:#6b7688; text-transform:uppercase;
+    margin-top:9px;
   }
 
   .read-more{
     display:inline-flex; align-items:center; gap:6px;
-    font-family:"IBM Plex Mono", monospace; font-size:0.72rem;
+    font-family:"IBM Plex Mono", monospace; font-size:0.7rem;
     letter-spacing:0.06em; text-transform:uppercase;
     color:var(--collegiate); text-decoration:none;
     border-bottom:1px solid var(--collegiate); padding-bottom:2px;
   }
   .read-more:hover{opacity:0.7;}
 
-  /* archive — pull-out drawer accordion, cumulative by month */
+  /* archive — accordion, cumulative by month */
   .drawer{
+    background:var(--paper-raised);
     border:1px solid var(--line);
     margin-bottom:10px;
-    background:var(--paper-raised);
   }
   .drawer-handle{
     width:100%;
     display:flex; align-items:center; justify-content:space-between;
     background:none; border:none; cursor:pointer;
-    padding:16px 22px;
+    padding:17px 24px;
     font-family:"IBM Plex Mono", monospace;
-    font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase;
+    font-size:0.74rem; letter-spacing:0.09em; text-transform:uppercase;
     color:var(--ink);
     text-align:left;
   }
   .drawer-handle:hover, .drawer-handle:focus-visible{color:var(--collegiate);}
-  .drawer-handle .count{color:#5a6a70; font-weight:400; text-transform:none; letter-spacing:0;}
+  .drawer-handle .count{color:#6b7688; font-weight:400; text-transform:none; letter-spacing:0;}
   .drawer-handle .chevron{
-    display:inline-block; width:9px; height:9px;
+    display:inline-block; width:8px; height:8px;
     border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor;
     transform:rotate(45deg); transition:transform 0.2s ease; flex:none;
   }
   .drawer.open .drawer-handle .chevron{transform:rotate(-135deg);}
   .drawer-contents{
     max-height:0; overflow:hidden; transition:max-height 0.28s ease;
-    border-top:1px dashed var(--line);
+    border-top:1px solid var(--line);
   }
   .drawer.open .drawer-contents{max-height:600px;}
-  .drawer-list{padding:6px 22px 18px;}
+  .drawer-list{padding:6px 24px 18px;}
   .drawer-item{
     display:flex; justify-content:space-between; gap:16px;
-    padding:12px 0; border-bottom:1px solid var(--line);
-    font-size:0.92rem;
+    padding:13px 0; border-bottom:1px solid var(--line);
+    font-size:0.94rem;
   }
   .drawer-item:last-child{border-bottom:none;}
   .drawer-item a{color:var(--ink); text-decoration:none;}
-  .drawer-item a:hover{color:var(--rust);}
+  .drawer-item a:hover{color:var(--collegiate);}
   .drawer-item .item-tag{
-    font-family:"IBM Plex Mono", monospace; font-size:0.65rem;
-    color:var(--moss); text-transform:uppercase; letter-spacing:0.05em;
+    font-family:"IBM Plex Mono", monospace; font-size:0.64rem;
+    color:var(--gold); text-transform:uppercase; letter-spacing:0.05em;
     white-space:nowrap; padding-top:2px;
   }
 
   footer{
-    margin-top:60px; padding:26px 0 50px;
+    margin-top:64px; padding:26px 0 56px;
     border-top:1px solid var(--line);
-    font-family:"IBM Plex Mono", monospace; font-size:0.68rem;
-    color:#5a6a70; letter-spacing:0.04em;
+    font-family:"IBM Plex Mono", monospace; font-size:0.64rem;
+    color:#6b7688; letter-spacing:0.04em;
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
   }
 
@@ -238,118 +197,114 @@
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header>
-    <div class="site-mark">
-      <div class="mark-group">
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-          <ellipse cx="15" cy="15" rx="12" ry="5" stroke="#1B3450" stroke-width="1.1" transform="rotate(0 15 15)"/>
-          <ellipse cx="15" cy="15" rx="12" ry="5" stroke="#1B3450" stroke-width="1.1" transform="rotate(60 15 15)"/>
-          <ellipse cx="15" cy="15" rx="12" ry="5" stroke="#1B3450" stroke-width="1.1" transform="rotate(120 15 15)"/>
-          <circle cx="15" cy="15" r="2.3" fill="#2F6FB0"/>
-        </svg>
-        <div class="brand">Science Source: Education</div>
+  <div class="stripe"></div>
+
+  <div class="wrap">
+
+    <header>
+      <div class="site-mark">
+        <div class="mark-group">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="12" stroke="#14233B" stroke-width="1"/>
+            <circle cx="14" cy="14" r="8.2" stroke="#A9832F" stroke-width="0.9"/>
+            <text x="14" y="18.5" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="10" font-weight="600" fill="#14233B">SS</text>
+          </svg>
+          <div class="brand">Science Source: Education</div>
+        </div>
+        <nav>
+          <a href="#">Browse by Subject</a>
+          <a href="#">Archive</a>
+          <a href="#">About</a>
+        </nav>
       </div>
-      <nav>
-        <a href="#">Browse by Subject</a>
-        <a href="#">Archive</a>
-        <a href="#">About</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <section class="hero">
-    <div class="hero-tag">Working design concept</div>
-    <h1>Built around highly educational, illustrative imagery.</h1>
-    <p>The image library educators and students turn to for lectures, presentations, and projects — accurate biology, anatomy, and medical imagery, licensed straight from Science Source.</p>
-    <svg class="hero-illustration" viewBox="0 0 140 160" fill="none">
-      <path d="M70 10 C40 40 30 90 70 150" stroke="#4B5D3A" stroke-width="1.2" opacity="0.5"/>
-      <path d="M70 10 C100 40 110 90 70 150" stroke="#4B5D3A" stroke-width="1.2" opacity="0.5"/>
-      <line x1="70" y1="10" x2="70" y2="150" stroke="#4B5D3A" stroke-width="1.2" opacity="0.5"/>
-      <circle cx="70" cy="80" r="3" fill="#A8462F"/>
-    </svg>
-  </section>
+    <section class="hero">
+      <div class="hero-tag">Working design concept</div>
+      <h1>The science image library for higher education.</h1>
+      <p>The image library educators and students turn to for lectures, presentations, and projects — accurate biology, anatomy, and medical imagery, licensed straight from Science Source.</p>
+    </section>
 
-  <div class="section-label">Latest entry</div>
+    <div class="section-label">Latest entry</div>
 
-  <article class="specimen">
-    <div class="specimen-head">
-      <div class="specimen-id">No. <span>014</span> — Anatomy · Cardiovascular</div>
-      <div class="specimen-stamp">Cataloged Jul 31</div>
-    </div>
-    <div class="specimen-body">
-      <h2>Left vs. Right: Telling the Heart's Chambers Apart on Sight</h2>
-      <div class="specimen-meta">A&amp;P I <span class="dot">&middot;</span> 6 min read <span class="dot">&middot;</span> 4 figures</div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec dictum sapien, at gravida arcu. It's one of the most-searched diagrams in our anatomy collection — and one of the easiest to get wrong when you're sourcing it one-off. Here's the exact figure, cataloged and ready to license.</p>
-      <div class="fig"></div>
-      <div class="fig-caption">Fig. 1 — Labeled coronal section, anterior view <a class="read-more" style="margin-left:10px;" href="#">License this image →</a></div>
-      <p>Praesent euismod, nibh nec tincidunt fermentum, sapien velit congue elit, eget sagittis justo lorem nec est. Duis auctor, nunc sit amet cursus tempor, felis sapien porta libero, at bibendum tellus — browse the full set in this category below.</p>
-      <a class="read-more" href="#">See the full collection for this topic →</a>
-    </div>
-  </article>
+    <article class="journal-card">
+      <div class="card-head">
+        <div class="card-id">No. <span>014</span> — Anatomy · Cardiovascular</div>
+        <div class="card-date">July 31, 2026</div>
+      </div>
+      <div class="card-body">
+        <h2>Left vs. Right: Telling the Heart's Chambers Apart on Sight</h2>
+        <div class="card-meta">A&amp;P I <span class="dot">&middot;</span> 6 min read <span class="dot">&middot;</span> 4 figures</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec dictum sapien, at gravida arcu. It's one of the most-searched diagrams in our anatomy collection — and one of the easiest to get wrong when you're sourcing it one-off. Here's the exact figure, cataloged and ready to license.</p>
+        <div class="fig"></div>
+        <div class="fig-caption">Fig. 1 — Labeled coronal section, anterior view <a class="read-more" style="margin-left:10px;" href="#">License this image →</a></div>
+        <p>Praesent euismod, nibh nec tincidunt fermentum, sapien velit congue elit, eget sagittis justo lorem nec est. Duis auctor, nunc sit amet cursus tempor, felis sapien porta libero, at bibendum tellus — browse the full set in this category below.</p>
+        <a class="read-more" href="#">See the full collection for this topic →</a>
+      </div>
+    </article>
 
-  <div class="section-label">Archive — cumulative, by month</div>
+    <div class="section-label">Archive — cumulative, by month</div>
 
-  <div class="drawer open">
-    <button class="drawer-handle" aria-expanded="true">
-      <span>July 2026 <span class="count">— 3 entries</span></span>
-      <span class="chevron"></span>
-    </button>
-    <div class="drawer-contents">
-      <div class="drawer-list">
-        <div class="drawer-item"><a href="#">Left vs. Right: Telling the Heart's Chambers Apart on Sight</a><span class="item-tag">Anatomy</span></div>
-        <div class="drawer-item"><a href="#">Gram-Positive or Negative? Reading the Stain Correctly</a><span class="item-tag">Microbiology</span></div>
-        <div class="drawer-item"><a href="#">Every Diagram You Need for Cell Division Unit</a><span class="item-tag">Intro Bio</span></div>
+    <div class="drawer open">
+      <button class="drawer-handle" aria-expanded="true">
+        <span>July 2026 <span class="count">— 3 entries</span></span>
+        <span class="chevron"></span>
+      </button>
+      <div class="drawer-contents">
+        <div class="drawer-list">
+          <div class="drawer-item"><a href="#">Left vs. Right: Telling the Heart's Chambers Apart on Sight</a><span class="item-tag">Anatomy</span></div>
+          <div class="drawer-item"><a href="#">Gram-Positive or Negative? Reading the Stain Correctly</a><span class="item-tag">Microbiology</span></div>
+          <div class="drawer-item"><a href="#">Every Diagram You Need for Cell Division Unit</a><span class="item-tag">Intro Bio</span></div>
+        </div>
       </div>
     </div>
+
+    <div class="drawer">
+      <button class="drawer-handle" aria-expanded="false">
+        <span>June 2026 <span class="count">— 5 entries</span></span>
+        <span class="chevron"></span>
+      </button>
+      <div class="drawer-contents">
+        <div class="drawer-list">
+          <div class="drawer-item"><a href="#">Mitosis vs. Meiosis, Side by Side</a><span class="item-tag">Intro Bio</span></div>
+          <div class="drawer-item"><a href="#">Functional Groups: A Visual Glossary</a><span class="item-tag">Org. Chem</span></div>
+          <div class="drawer-item"><a href="#">Muscle Origin and Insertion, Illustrated</a><span class="item-tag">A&amp;P II</span></div>
+          <div class="drawer-item"><a href="#">Reading a Punnett Square at a Glance</a><span class="item-tag">Genetics</span></div>
+          <div class="drawer-item"><a href="#">Virus Structure: Enveloped vs. Non-Enveloped</a><span class="item-tag">Microbiology</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer">
+      <button class="drawer-handle" aria-expanded="false">
+        <span>May 2026 <span class="count">— 2 entries</span></span>
+        <span class="chevron"></span>
+      </button>
+      <div class="drawer-contents">
+        <div class="drawer-list">
+          <div class="drawer-item"><a href="#">Nerve Pathways: A Beginner's Map</a><span class="item-tag">A&amp;P I</span></div>
+          <div class="drawer-item"><a href="#">DNA Replication, Step by Step</a><span class="item-tag">Intro Bio</span></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <span>Science Source: Education — design concept, not yet live</span>
+      <span>sciencesource.com/learn (planned)</span>
+    </footer>
+
   </div>
 
-  <div class="drawer">
-    <button class="drawer-handle" aria-expanded="false">
-      <span>June 2026 <span class="count">— 5 entries</span></span>
-      <span class="chevron"></span>
-    </button>
-    <div class="drawer-contents">
-      <div class="drawer-list">
-        <div class="drawer-item"><a href="#">Mitosis vs. Meiosis, Side by Side</a><span class="item-tag">Intro Bio</span></div>
-        <div class="drawer-item"><a href="#">Functional Groups: A Visual Glossary</a><span class="item-tag">Org. Chem</span></div>
-        <div class="drawer-item"><a href="#">Muscle Origin and Insertion, Illustrated</a><span class="item-tag">A&amp;P II</span></div>
-        <div class="drawer-item"><a href="#">Reading a Punnett Square at a Glance</a><span class="item-tag">Genetics</span></div>
-        <div class="drawer-item"><a href="#">Virus Structure: Enveloped vs. Non-Enveloped</a><span class="item-tag">Microbiology</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="drawer">
-    <button class="drawer-handle" aria-expanded="false">
-      <span>May 2026 <span class="count">— 2 entries</span></span>
-      <span class="chevron"></span>
-    </button>
-    <div class="drawer-contents">
-      <div class="drawer-list">
-        <div class="drawer-item"><a href="#">Nerve Pathways: A Beginner's Map</a><span class="item-tag">A&amp;P I</span></div>
-        <div class="drawer-item"><a href="#">DNA Replication, Step by Step</a><span class="item-tag">Intro Bio</span></div>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <span>Field Notes — design concept, not yet live</span>
-    <span>sciencesource.com/learn (planned)</span>
-  </footer>
-
-</div>
-
-<script>
-  document.querySelectorAll('.drawer-handle').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var drawer = btn.closest('.drawer');
-      var isOpen = drawer.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen);
+  <script>
+    document.querySelectorAll('.drawer-handle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var drawer = btn.closest('.drawer');
+        var isOpen = drawer.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen);
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
