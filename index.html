@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cell Biology — Science Source: Education</title>
+<title>Science Source: Education</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -19,31 +19,13 @@
     --rule:        #D8D2C0;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Source Serif 4', serif;
-    line-height: 1.6;
-  }
+  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', serif; line-height: 1.6; }
   .mono { font-family: 'IBM Plex Mono', monospace; }
   a { color: inherit; }
 
-  /* ── Utility bar ── */
-  .utility-bar {
-    background: var(--navy-deep);
-    color: rgba(255,255,255,0.65);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    padding: 7px 40px;
-    display: flex; justify-content: space-between;
-  }
+  .utility-bar { background: var(--navy-deep); color: rgba(255,255,255,0.65); font-size: 11px; letter-spacing: 0.06em; padding: 7px 40px; display: flex; justify-content: space-between; }
 
-  /* ── Header ── */
-  .site-header {
-    background: var(--navy);
-    padding: 20px 40px 22px;
-    position: relative;
-  }
+  .site-header { background: var(--navy); padding: 20px 40px 22px; }
   .header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1080px; margin: 0 auto; }
   .wordmark { display: flex; align-items: center; gap: 12px; }
   .wordmark-stripe { width: 5px; height: 34px; background: linear-gradient(var(--gold-light), var(--gold)); flex-shrink: 0; }
@@ -54,124 +36,66 @@
   .site-nav a { font-size: 13px; letter-spacing: 0.04em; color: rgba(255,255,255,0.75); text-decoration: none; }
   .site-nav a.active { color: var(--paper-white); border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
 
-  /* ── Bookmark ribbon — the signature device: this page is meant to be kept ── */
-  .ribbon {
-    position: absolute; top: 0; right: 74px;
-    width: 34px; height: 92px;
-    background: linear-gradient(var(--gold-light), var(--gold));
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.18);
-  }
-  .ribbon-label {
-    position: absolute; top: 14px; left: 50%; transform: translateX(-50%) rotate(90deg);
-    font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 500;
-    letter-spacing: 0.12em; color: var(--navy-deep); white-space: nowrap;
-  }
-
-  /* ── Hero ── */
-  .hero { max-width: 1080px; margin: 0 auto; padding: 52px 40px 36px; }
-  .eyebrow-row { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
-  .eyebrow {
-    font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500;
-    letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold);
-    background: rgba(176,141,43,0.1); padding: 4px 10px;
-  }
-  .breadcrumb { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-muted); }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif; font-weight: 500;
-    font-size: 58px; line-height: 1.05; color: var(--navy); margin-bottom: 18px;
-  }
-  .hero-sub {
-    font-size: 18px; color: var(--ink-muted); max-width: 680px;
-    margin-bottom: 26px; font-style: italic; font-family: 'Cormorant Garamond', serif;
-  }
-  .curriculum-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-  .curriculum-tag {
-    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--collegiate);
-    border: 1px solid var(--collegiate); padding: 5px 12px; letter-spacing: 0.03em;
-  }
+  /* ── Hero: the homepage's job is to be a table of contents, not a narrative ── */
+  .hero { max-width: 1080px; margin: 0 auto; padding: 56px 40px 40px; }
+  .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); background: rgba(176,141,43,0.1); padding: 4px 10px; display: inline-block; margin-bottom: 18px; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 52px; line-height: 1.08; color: var(--navy); margin-bottom: 16px; max-width: 620px; }
+  .hero p { font-size: 17px; color: var(--ink-muted); max-width: 560px; font-style: italic; font-family: 'Cormorant Garamond', serif; margin-bottom: 24px; }
+  .hero-search { display: flex; gap: 0; max-width: 460px; border: 1px solid var(--navy); }
+  .hero-search input { flex: 1; border: none; padding: 12px 16px; font-family: 'Source Serif 4', serif; font-size: 14px; background: var(--paper-white); }
+  .hero-search input:focus { outline: none; }
+  .hero-search button { background: var(--navy); color: var(--paper-white); border: none; padding: 12px 20px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; }
 
   .double-rule { max-width: 1080px; margin: 0 auto; padding: 0 40px; }
-  .double-rule::after {
-    content: ''; display: block; height: 3px;
-    background: linear-gradient(90deg, var(--navy) 0%, var(--navy) 60%, var(--gold) 60%, var(--gold) 100%);
-  }
-  .double-rule::before {
-    content: ''; display: block; height: 1px; background: var(--rule); margin-bottom: 3px;
-  }
+  .double-rule::after { content: ''; display: block; height: 3px; background: linear-gradient(90deg, var(--navy) 0%, var(--navy) 60%, var(--gold) 60%, var(--gold) 100%); }
+  .double-rule::before { content: ''; display: block; height: 1px; background: var(--rule); margin-bottom: 3px; }
 
-  /* ── Intro ── */
-  .intro { max-width: 1080px; margin: 0 auto; padding: 34px 40px 6px; }
-  .intro p { max-width: 700px; font-size: 16px; color: var(--ink); }
-  .intro p + p { margin-top: 14px; }
+  /* ── Subject index ── */
+  .index-section { max-width: 1080px; margin: 0 auto; padding: 44px 40px 10px; }
+  .index-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+  .index-head h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 26px; color: var(--navy); }
+  .index-count { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-muted); }
+  .index-note { font-size: 13px; color: var(--ink-muted); margin-bottom: 30px; max-width: 620px; }
 
-  /* ── Sections ── */
-  .section { max-width: 1080px; margin: 0 auto; padding: 40px 40px 6px; }
-  .section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px; }
-  .section-head h2 {
-    font-family: 'Cormorant Garamond', serif; font-weight: 500;
-    font-size: 28px; color: var(--navy);
+  .hub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px; }
+  .hub-tile {
+    background: var(--paper-white); border: 1px solid var(--rule); text-decoration: none; color: var(--ink);
+    padding: 22px 22px 18px; display: flex; flex-direction: column; transition: border-color 0.15s;
+    position: relative;
   }
-  .section-count { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-muted); }
+  .hub-tile:hover { border-color: var(--gold); }
+  .hub-tile-ribbon { position: absolute; top: 0; right: 22px; width: 16px; height: 26px; background: linear-gradient(var(--gold-light), var(--gold)); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%); }
+  .hub-tile-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--ink-muted); letter-spacing: 0.06em; margin-bottom: 10px; }
+  .hub-tile h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 24px; color: var(--navy); margin-bottom: 8px; }
+  .hub-tile p { font-size: 13px; color: var(--ink-muted); margin-bottom: 14px; flex: 1; }
+  .hub-tile-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .hub-tile-tag { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--collegiate); border: 1px solid var(--collegiate); padding: 3px 7px; }
+  .hub-tile-footer { display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--ink-muted); border-top: 1px solid var(--rule); padding-top: 10px; }
 
-  .image-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-  }
-  .image-card { display: flex; flex-direction: column; }
-  .image-swatch {
-    aspect-ratio: 4/3; border: 1px solid var(--rule);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--ink-muted); font-family: 'IBM Plex Mono', monospace; font-size: 10px;
-    text-align: center; padding: 10px; line-height: 1.5;
-  }
-  .swatch-a { background: #E4E9F0; }
-  .swatch-b { background: #EFE7D8; }
-  .swatch-c { background: #E1EAE4; }
-  .swatch-d { background: #EDE2E9; }
-  .image-caption { font-size: 13px; margin-top: 9px; color: var(--ink); }
-  .image-credit { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--ink-muted); margin-top: 3px; }
+  /* ── Coming soon tile — signals the index grows, without dead links ── */
+  .hub-tile.pending { border-style: dashed; background: transparent; align-items: center; justify-content: center; text-align: center; color: var(--ink-muted); }
+  .hub-tile.pending h3 { color: var(--ink-muted); font-size: 18px; }
+  .hub-tile.pending:hover { border-color: var(--rule); }
 
-  /* ── Related band ── */
-  .related-band { background: var(--paper-white); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-top: 52px; }
-  .related-inner { max-width: 1080px; margin: 0 auto; padding: 40px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-  .related-col h3 {
-    font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--ink-muted); margin-bottom: 14px;
-  }
-  .related-list { list-style: none; }
-  .related-list li { padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
-  .related-list li:last-child { border-bottom: none; }
-  .related-list a { text-decoration: none; color: var(--navy); }
-  .related-list .tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--gold); margin-right: 8px; }
+  .related-band { background: var(--paper-white); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-top: 56px; }
+  .related-inner { max-width: 1080px; margin: 0 auto; padding: 36px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .related-inner p { font-size: 14px; color: var(--ink-muted); max-width: 460px; }
+  .related-cta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--collegiate); border: 1px solid var(--collegiate); padding: 9px 18px; text-decoration: none; white-space: nowrap; }
 
-  /* ── Footer ── */
-  .site-footer {
-    max-width: 1080px; margin: 0 auto; padding: 26px 40px 50px;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .footer-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-muted); }
-  .footer-cta {
-    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--collegiate);
-    border: 1px solid var(--collegiate); padding: 8px 16px; text-decoration: none;
-  }
+  .site-footer { max-width: 1080px; margin: 0 auto; padding: 26px 40px 50px; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-muted); }
 
-  @media (max-width: 800px) {
-    .image-grid { grid-template-columns: repeat(2, 1fr); }
-    .related-inner { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 40px; }
-    .ribbon { display: none; }
-  }
+  @media (max-width: 900px) { .hub-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .hub-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 38px; } .related-inner { flex-direction: column; gap: 16px; align-items: flex-start; } }
 </style>
 </head>
 <body>
 
 <div class="utility-bar mono">
   <span>SCIENCE SOURCE: EDUCATION — LICENSED IMAGERY FOR HIGHER ED</span>
-  <span>sciencesource.com/learn</span>
+  <span>sciencesource.com/education</span>
 </div>
 
 <header class="site-header">
-  <div class="ribbon"><div class="ribbon-label">TOPIC HUB</div></div>
   <div class="header-inner">
     <div class="wordmark">
       <div class="wordmark-stripe"></div>
@@ -190,138 +114,77 @@
 </header>
 
 <div class="hero">
-  <div class="eyebrow-row">
-    <span class="eyebrow">Topic hub — updated in place</span>
-    <span class="breadcrumb">Topics / Cell Biology</span>
-  </div>
-  <h1>Cell Biology</h1>
-  <p class="hero-sub">The permanent library page for cell structure, division, and function — built to be bookmarked, cited, and returned to.</p>
-  <div class="curriculum-tags">
-    <span class="curriculum-tag">Intro Bio</span>
-    <span class="curriculum-tag">AP Biology</span>
-    <span class="curriculum-tag">Cell &amp; Molecular Bio</span>
-    <span class="curriculum-tag">Nursing &amp; Allied Health</span>
+  <span class="eyebrow">Topic index</span>
+  <h1>Every subject, one durable page each.</h1>
+  <p>Browse licensed imagery organized by subject — built for instructors, publishers, and science communicators, and kept current as our library grows.</p>
+  <div class="hero-search">
+    <input type="text" placeholder="Search topics — e.g. &quot;genetics&quot; or &quot;anatomy&quot;">
+    <button>SEARCH</button>
   </div>
 </div>
 
 <div class="double-rule"></div>
 
-<div class="intro">
-  <p>From the folded membranes of the mitochondrion to the choreography of chromosomes during mitosis, the cell is where biology becomes visible. This hub collects Science Source's licensed photography, micrographs, and scientific illustration on cell structure and division — organized for instructors building lecture slides, textbook publishers sourcing figures, and students who want to see, not just read, how a cell works.</p>
-  <p>Every image below is cleared for educational licensing. Captions note magnification and imaging method where relevant, so you can judge fit for a syllabus or a printed page before you license.</p>
-</div>
+<div class="index-section">
+  <div class="index-head">
+    <h2>All topics</h2>
+    <span class="index-count">4 topic hubs</span>
+  </div>
+  <p class="index-note">Each hub is a living page — updated as we license new imagery and expand coverage, not a dated post.</p>
 
-<div class="section">
-  <div class="section-head">
-    <h2>Cell structure &amp; organelles</h2>
-    <span class="section-count mono">14 images in this set</span>
-  </div>
-  <div class="image-grid">
-    <div class="image-card">
-      <div class="image-swatch swatch-a">TEM micrograph<br>mitochondrion, cristae detail</div>
-      <div class="image-caption">Mitochondrion showing cristae folding, transmission electron micrograph</div>
-      <div class="image-credit mono">SS-88214 · Color · RM</div>
-    </div>
-    <div class="image-card">
-      <div class="image-swatch swatch-b">Illustration<br>animal cell, labeled</div>
-      <div class="image-caption">Labeled diagram of a generalized animal cell and its organelles</div>
-      <div class="image-credit mono">SS-40217 · Color · RF</div>
-    </div>
-    <div class="image-card">
-      <div class="image-swatch swatch-c">Confocal micrograph<br>Golgi apparatus, stained</div>
-      <div class="image-caption">Golgi apparatus visualized with fluorescent confocal microscopy</div>
-      <div class="image-credit mono">SS-91530 · Color · RM</div>
-    </div>
-    <div class="image-card">
-      <div class="image-swatch swatch-d">SEM micrograph<br>nuclear envelope, pores</div>
-      <div class="image-caption">Nuclear envelope with visible nuclear pore complexes, SEM</div>
-      <div class="image-credit mono">SS-77042 · B&amp;W · RM</div>
-    </div>
-  </div>
-</div>
+  <div class="hub-grid">
+    <a href="#" class="hub-tile">
+      <div class="hub-tile-ribbon"></div>
+      <div class="hub-tile-eyebrow">42 images · 3 sections</div>
+      <h3>Cell Biology</h3>
+      <p>Cell structure, mitosis, and membrane transport, from micrograph to labeled diagram.</p>
+      <div class="hub-tile-tags"><span class="hub-tile-tag">Intro Bio</span><span class="hub-tile-tag">AP Biology</span></div>
+      <div class="hub-tile-footer"><span>/education/cellbiology</span><span>Updated Mar 2026</span></div>
+    </a>
 
-<div class="section">
-  <div class="section-head">
-    <h2>Mitosis &amp; cell division</h2>
-    <span class="section-count mono">9 images in this set</span>
-  </div>
-  <div class="image-grid">
-    <div class="image-card">
-      <div class="image-swatch swatch-b">Light micrograph<br>metaphase, stained chromosomes</div>
-      <div class="image-caption">Onion root tip cell in metaphase, chromosomes stained for contrast</div>
-      <div class="image-credit mono">SS-33981 · Color · RF</div>
-    </div>
-    <div class="image-card">
-      <div class="image-swatch swatch-a">Illustration<br>mitosis, five-stage sequence</div>
-      <div class="image-caption">Five-stage illustrated sequence of mitotic cell division</div>
-      <div class="image-credit mono">SS-40225 · Color · RF</div>
-    </div>
-    <div class="image-card">
-      <div class="image-swatch swatch-c">Fluorescence micrograph<br>spindle fibers, anaphase</div>
-      <div class="image-caption">Spindle fibers pulling sister chromatids apart during anaphase</div>
-      <div class="image-credit mono">SS-90112 · Color · RM</div>
-    </div>
-    <div class="image-card">
-      <div class="image-swatch swatch-d">Illustration<br>cytokinesis, cleavage furrow</div>
-      <div class="image-caption">Cleavage furrow forming during cytokinesis in an animal cell</div>
-      <div class="image-credit mono">SS-40231 · Color · RF</div>
-    </div>
-  </div>
-</div>
+    <a href="#" class="hub-tile">
+      <div class="hub-tile-ribbon"></div>
+      <div class="hub-tile-eyebrow">28 images · 2 sections</div>
+      <h3>Genetics &amp; DNA</h3>
+      <p>Chromosome structure, gene editing, and inheritance patterns for the modern curriculum.</p>
+      <div class="hub-tile-tags"><span class="hub-tile-tag">AP Biology</span><span class="hub-tile-tag">Genetics</span></div>
+      <div class="hub-tile-footer"><span>/education/genetics</span><span>Updated Feb 2026</span></div>
+    </a>
 
-<div class="section">
-  <div class="section-head">
-    <h2>Membrane transport</h2>
-    <span class="section-count mono">6 images in this set</span>
-  </div>
-  <div class="image-grid">
-    <div class="image-card">
-      <div class="image-swatch swatch-c">Illustration<br>phospholipid bilayer, cross-section</div>
-      <div class="image-caption">Cross-section of the phospholipid bilayer with embedded proteins</div>
-      <div class="image-credit mono">SS-40244 · Color · RF</div>
-    </div>
-    <div class="image-card">
-      <div class="image-swatch swatch-a">Illustration<br>facilitated diffusion, channel protein</div>
-      <div class="image-caption">Facilitated diffusion through a membrane channel protein</div>
-      <div class="image-credit mono">SS-40251 · Color · RF</div>
-    </div>
-    <div class="image-card">
-      <div class="image-swatch swatch-b">TEM micrograph<br>endocytosis, vesicle formation</div>
-      <div class="image-caption">Vesicle formation during endocytosis, transmission electron micrograph</div>
-      <div class="image-credit mono">SS-88229 · B&amp;W · RM</div>
-    </div>
-    <div class="image-card">
-      <div class="image-swatch swatch-d">Illustration<br>sodium-potassium pump, active transport</div>
-      <div class="image-caption">Sodium-potassium pump moving ions against their gradient</div>
-      <div class="image-credit mono">SS-40259 · Color · RF</div>
+    <a href="#" class="hub-tile">
+      <div class="hub-tile-ribbon"></div>
+      <div class="hub-tile-eyebrow">51 images · 4 sections</div>
+      <h3>Human Anatomy</h3>
+      <p>Systems-level anatomy imagery for nursing, allied health, and intro physiology courses.</p>
+      <div class="hub-tile-tags"><span class="hub-tile-tag">Nursing</span><span class="hub-tile-tag">Physiology</span></div>
+      <div class="hub-tile-footer"><span>/education/anatomy</span><span>Updated Jan 2026</span></div>
+    </a>
+
+    <a href="#" class="hub-tile">
+      <div class="hub-tile-ribbon"></div>
+      <div class="hub-tile-eyebrow">19 images · 2 sections</div>
+      <h3>Microscopy Techniques</h3>
+      <p>How light, electron, and confocal microscopy differ, illustrated side by side.</p>
+      <div class="hub-tile-tags"><span class="hub-tile-tag">Lab Methods</span></div>
+      <div class="hub-tile-footer"><span>/education/microscopy</span><span>Updated Jan 2026</span></div>
+    </a>
+
+    <div class="hub-tile pending">
+      <h3>More topics coming</h3>
     </div>
   </div>
 </div>
 
 <div class="related-band">
   <div class="related-inner">
-    <div class="related-col">
-      <h3>Related topic hubs</h3>
-      <ul class="related-list">
-        <li><span class="tag">HUB</span><a href="#">Genetics &amp; DNA structure</a></li>
-        <li><span class="tag">HUB</span><a href="#">Microscopy techniques</a></li>
-        <li><span class="tag">HUB</span><a href="#">Human anatomy</a></li>
-      </ul>
-    </div>
-    <div class="related-col">
-      <h3>From the blog</h3>
-      <ul class="related-list">
-        <li><span class="tag">MAR 2026</span><a href="#">Cajal and the birth of modern neuroscience</a></li>
-        <li><span class="tag">FEB 2026</span><a href="#">Your vagus nerve and your health</a></li>
-        <li><span class="tag">JUN 2026</span><a href="#">CRISPR, explained for the classroom</a></li>
-      </ul>
-    </div>
+    <p>Publishers and instructors: request a subject we haven't covered yet, or license imagery directly from the full Science Source catalog.</p>
+    <a href="#" class="related-cta">Request a topic →</a>
   </div>
 </div>
 
 <footer class="site-footer">
-  <span class="footer-meta">Last updated March 2026 · This page is maintained and expanded over time</span>
-  <a href="#" class="footer-cta">Browse the full cell biology gallery →</a>
+  <span>sciencesource.com/education</span>
+  <span>Index regenerated automatically on each topic publish</span>
 </footer>
 
 </body>
