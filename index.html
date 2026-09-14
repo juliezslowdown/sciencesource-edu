@@ -3,188 +3,467 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Science Source: Education</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Science Source Education: Institutional Image Licensing for Academic Libraries</title>
+<meta name="description" content="A single institutional license gives every student and instructor on campus access to the Science Source image library, with no per-image clearance and no invoices per download.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy:        #1B2A4A;
-    --navy-deep:   #0F1D35;
-    --collegiate:  #2C4770;
-    --gold:        #B08D2B;
-    --gold-light:  #D4B860;
-    --paper:       #F7F4EC;
-    --paper-white: #FFFDF8;
-    --ink:         #1B2A4A;
-    --ink-muted:   #5C6B85;
-    --rule:        #D8D2C0;
+  :root{
+    --navy:#16294A;
+    --navy-light:#2E4573;
+    --gold:#A9822E;
+    --gold-light:#D4B968;
+    --paper:#F8F6F0;
+    --paper-dim:#F1EDE2;
+    --ink:#1E2126;
+    --slate:#5C6470;
+    --rule: rgba(22,41,74,0.14);
+    --max: 700px;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', serif; line-height: 1.6; }
-  .mono { font-family: 'IBM Plex Mono', monospace; }
-  a { color: inherit; }
-
-  .utility-bar { background: var(--navy-deep); color: rgba(255,255,255,0.65); font-size: 11px; letter-spacing: 0.06em; padding: 7px 40px; display: flex; justify-content: space-between; }
-
-  .site-header { background: var(--navy); padding: 20px 40px 22px; }
-  .header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1080px; margin: 0 auto; }
-  .wordmark { display: flex; align-items: center; gap: 12px; }
-  .wordmark-stripe { width: 5px; height: 34px; background: linear-gradient(var(--gold-light), var(--gold)); flex-shrink: 0; }
-  .wordmark-text { font-family: 'Cormorant Garamond', serif; color: var(--paper-white); }
-  .wordmark-text .line1 { font-size: 21px; font-weight: 500; line-height: 1.1; }
-  .wordmark-text .line2 { font-size: 12px; letter-spacing: 0.14em; color: var(--gold-light); text-transform: uppercase; }
-  .site-nav { display: flex; gap: 32px; }
-  .site-nav a { font-size: 13px; letter-spacing: 0.04em; color: rgba(255,255,255,0.75); text-decoration: none; }
-  .site-nav a.active { color: var(--paper-white); border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
-
-  /* ── Hero: the homepage's job is to be a table of contents, not a narrative ── */
-  .hero { max-width: 1080px; margin: 0 auto; padding: 56px 40px 40px; }
-  .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); background: rgba(176,141,43,0.1); padding: 4px 10px; display: inline-block; margin-bottom: 18px; }
-  .hero h1 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 52px; line-height: 1.08; color: var(--navy); margin-bottom: 16px; max-width: 620px; }
-  .hero p { font-size: 17px; color: var(--ink-muted); max-width: 560px; font-style: italic; font-family: 'Cormorant Garamond', serif; margin-bottom: 24px; }
-  .hero-search { display: flex; gap: 0; max-width: 460px; border: 1px solid var(--navy); }
-  .hero-search input { flex: 1; border: none; padding: 12px 16px; font-family: 'Source Serif 4', serif; font-size: 14px; background: var(--paper-white); }
-  .hero-search input:focus { outline: none; }
-  .hero-search button { background: var(--navy); color: var(--paper-white); border: none; padding: 12px 20px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; }
-
-  .double-rule { max-width: 1080px; margin: 0 auto; padding: 0 40px; }
-  .double-rule::after { content: ''; display: block; height: 3px; background: linear-gradient(90deg, var(--navy) 0%, var(--navy) 60%, var(--gold) 60%, var(--gold) 100%); }
-  .double-rule::before { content: ''; display: block; height: 1px; background: var(--rule); margin-bottom: 3px; }
-
-  /* ── Subject index ── */
-  .index-section { max-width: 1080px; margin: 0 auto; padding: 44px 40px 10px; }
-  .index-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
-  .index-head h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 26px; color: var(--navy); }
-  .index-count { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-muted); }
-  .index-note { font-size: 13px; color: var(--ink-muted); margin-bottom: 30px; max-width: 620px; }
-
-  .hub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px; }
-  .hub-tile {
-    background: var(--paper-white); border: 1px solid var(--rule); text-decoration: none; color: var(--ink);
-    padding: 22px 22px 18px; display: flex; flex-direction: column; transition: border-color 0.15s;
-    position: relative;
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:18px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
   }
-  .hub-tile:hover { border-color: var(--gold); }
-  .hub-tile-ribbon { position: absolute; top: 0; right: 22px; width: 16px; height: 26px; background: linear-gradient(var(--gold-light), var(--gold)); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%); }
-  .hub-tile-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--ink-muted); letter-spacing: 0.06em; margin-bottom: 10px; }
-  .hub-tile h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 24px; color: var(--navy); margin-bottom: 8px; }
-  .hub-tile p { font-size: 13px; color: var(--ink-muted); margin-bottom: 14px; flex: 1; }
-  .hub-tile-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
-  .hub-tile-tag { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--collegiate); border: 1px solid var(--collegiate); padding: 3px 7px; }
-  .hub-tile-footer { display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--ink-muted); border-top: 1px solid var(--rule); padding-top: 10px; }
+  h1,h2,h3{
+    font-family:'Cormorant Garamond', Georgia, serif;
+    font-weight:600;
+    line-height:1.12;
+    margin:0;
+    color:var(--navy);
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  .wrap--wide{max-width:960px;}
 
-  /* ── Coming soon tile — signals the index grows, without dead links ── */
-  .hub-tile.pending { border-style: dashed; background: transparent; align-items: center; justify-content: center; text-align: center; color: var(--ink-muted); }
-  .hub-tile.pending h3 { color: var(--ink-muted); font-size: 18px; }
-  .hub-tile.pending:hover { border-color: var(--rule); }
+  /* stripe device */
+  .stripe{
+    height:6px;
+    background:
+      linear-gradient(90deg, var(--gold-light) 0 34%, transparent 34% 36%,
+      var(--navy-light) 36% 64%, transparent 64% 66%,
+      var(--gold-light) 66% 100%);
+  }
 
-  .related-band { background: var(--paper-white); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-top: 56px; }
-  .related-inner { max-width: 1080px; margin: 0 auto; padding: 36px 40px; display: flex; justify-content: space-between; align-items: center; }
-  .related-inner p { font-size: 14px; color: var(--ink-muted); max-width: 460px; }
-  .related-cta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--collegiate); border: 1px solid var(--collegiate); padding: 9px 18px; text-decoration: none; white-space: nowrap; }
+  /* header */
+  header.top{
+    background:var(--navy);
+    color:#EDE7D6;
+    padding:22px 0;
+  }
+  .brandrow{
+    max-width:960px; margin:0 auto; padding:0 28px;
+    display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:6px;
+  }
+  .brandrow .mark{
+    font-family:'Cormorant Garamond', serif;
+    font-size:22px;
+    letter-spacing:0.01em;
+  }
+  .brandrow .mark em{ font-style:italic; color:var(--gold-light); font-weight:500; }
+  .brandrow .sub{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:#B9C2D6;
+    letter-spacing:0.02em;
+  }
 
-  .site-footer { max-width: 1080px; margin: 0 auto; padding: 26px 40px 50px; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-muted); }
+  /* hero */
+  .hero{
+    background:var(--navy);
+    color:#F3EFE3;
+    padding:64px 0 78px;
+    text-align:center;
+  }
+  .hero h1{
+    color:#FBF8EF;
+    font-size:44px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .hero p.lede{
+    max-width:520px;
+    margin:22px auto 0;
+    color:#CBD3E3;
+    font-size:19px;
+    line-height:1.6;
+  }
+  .cta{
+    display:inline-block;
+    margin-top:34px;
+    background:var(--gold);
+    color:#1B1503;
+    text-decoration:none;
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:16px;
+    padding:14px 30px;
+    border-radius:2px;
+    transition:background .15s ease;
+  }
+  .cta:hover{ background:var(--gold-light); }
+  .cta.secondary{
+    background:transparent;
+    color:#EDE7D6;
+    border:1px solid rgba(237,231,214,0.4);
+    margin-left:12px;
+  }
+  .cta.secondary:hover{ border-color:#EDE7D6; }
+  .hero .ctas{ margin-top:34px; }
+  .hero .ctas .cta{ margin-top:0; }
 
-  @media (max-width: 900px) { .hub-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 620px) { .hub-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 38px; } .related-inner { flex-direction: column; gap: 16px; align-items: flex-start; } }
+  /* image strip */
+  .image-strip{
+    position:relative;
+    z-index:2;
+    max-width:960px;
+    margin:0 auto;
+    padding:46px 28px 10px;
+    display:flex;
+    justify-content:center;
+    gap:26px;
+  }
+  .tile{
+    width:200px;
+    height:200px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    border:1px solid rgba(22,41,74,0.12);
+    box-shadow:0 16px 32px rgba(9,16,32,0.16);
+  }
+  .tile--white{ background:#FBFAF6; }
+  .tile--black{ background:#15161A; }
+  .tile img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+    display:block;
+  }
+  @media (max-width:640px){
+    .image-strip{ padding-top:32px; gap:12px; }
+    .tile{ width:104px; height:104px; }
+  }
+
+  /* sections */
+  section{ padding:64px 0; }
+  section.tight{ padding:48px 0; }
+  section .kicker{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  section h2{ font-size:32px; margin-bottom:18px; }
+  section p{ color:var(--ink); }
+  section p + p{ margin-top:14px; }
+  .lead{ font-size:20px; color:var(--navy); font-style:italic; font-weight:500; }
+
+  hr.rule{ border:none; border-top:1px solid var(--rule); margin:0; }
+
+  /* compare */
+  .compare{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+    margin-top:28px;
+  }
+  .compare > div{ background:var(--paper); padding:26px 24px; }
+  .compare h3{
+    font-size:19px;
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .compare .without h3{ color:var(--slate); }
+  .compare .with{ background:var(--paper-dim); }
+  .compare .with h3{ color:var(--navy); }
+  .compare ul{ margin:0; padding:0; list-style:none; }
+  .compare li{
+    font-size:16px;
+    color:var(--ink);
+    padding:7px 0;
+    border-top:1px solid var(--rule);
+  }
+  .compare li:first-child{ border-top:none; }
+
+  /* steps */
+  .steps{ margin-top:30px; }
+  .step{
+    display:grid;
+    grid-template-columns:44px 1fr;
+    gap:18px;
+    padding:20px 0;
+    border-top:1px solid var(--rule);
+  }
+  .step:last-child{ border-bottom:1px solid var(--rule); }
+  .step .num{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--gold);
+    font-size:15px;
+    padding-top:3px;
+  }
+  .step h3{ font-size:19px; margin-bottom:5px; }
+  .step p{ color:var(--slate); font-size:16px; margin:0; }
+
+  /* pricing band */
+  .pricing{
+    background:var(--navy);
+    color:#EDE7D6;
+    padding:70px 0;
+  }
+  .pricing .kicker{ color:var(--gold-light); }
+  .pricing h2{ color:#FBF8EF; }
+  .pricing-figure{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin:28px 0 8px;
+    flex-wrap:wrap;
+  }
+  .pricing-figure .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:52px;
+    color:var(--gold-light);
+    font-weight:500;
+  }
+  .pricing-figure .unit{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:16px;
+    color:#B9C2D6;
+  }
+  .pricing p{ color:#CBD3E3; }
+  .pricing .fine{
+    font-size:14px;
+    color:#8E9AB4;
+    margin-top:18px;
+  }
+
+  /* faq */
+  details{
+    border-top:1px solid var(--rule);
+    padding:18px 0;
+  }
+  details:last-of-type{ border-bottom:1px solid var(--rule); }
+  summary{
+    font-family:'Cormorant Garamond', serif;
+    font-size:20px;
+    font-weight:600;
+    color:var(--navy);
+    cursor:pointer;
+    list-style:none;
+  }
+  summary::-webkit-details-marker{ display:none; }
+  summary::before{
+    content:'+';
+    display:inline-block;
+    width:18px;
+    color:var(--gold);
+    font-family:'IBM Plex Mono', monospace;
+  }
+  details[open] summary::before{ content:'–'; }
+  details p{
+    margin-top:12px;
+    padding-left:18px;
+    color:var(--slate);
+    font-size:16px;
+  }
+
+  /* footer / contact */
+  footer{
+    background:var(--paper-dim);
+    padding:60px 0 50px;
+  }
+  footer h2{ font-size:28px; }
+  footer .contact-line{
+    margin-top:20px;
+    font-size:18px;
+  }
+  footer .contact-line a{
+    color:var(--navy);
+    text-decoration:none;
+    border-bottom:1px solid var(--gold);
+  }
+  footer .meta{
+    margin-top:36px;
+    padding-top:24px;
+    border-top:1px solid var(--rule);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--slate);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  @media (max-width:640px){
+    .hero h1{ font-size:32px; }
+    section h2{ font-size:27px; }
+    .compare{ grid-template-columns:1fr; }
+    .hero .cta.secondary{ margin-left:0; margin-top:12px; display:block; }
+    .pricing-figure .num{ font-size:40px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+  }
 </style>
 </head>
 <body>
 
-<div class="utility-bar mono">
-  <span>SCIENCE SOURCE: EDUCATION — LICENSED IMAGERY FOR HIGHER ED</span>
-  <span>sciencesource.com/education</span>
-</div>
-
-<header class="site-header">
-  <div class="header-inner">
-    <div class="wordmark">
-      <div class="wordmark-stripe"></div>
-      <div class="wordmark-text">
-        <div class="line1">Science Source</div>
-        <div class="line2">Education</div>
-      </div>
-    </div>
-    <nav class="site-nav">
-      <a href="#" class="active">Topics</a>
-      <a href="#">Blog</a>
-      <a href="#">About</a>
-      <a href="#">Search the library</a>
-    </nav>
+<header class="top">
+  <div class="brandrow">
+    <div class="mark">Science Source <em>Education</em></div>
+    <div class="sub">Institutional licensing for college &amp; university libraries</div>
   </div>
 </header>
+<div class="stripe"></div>
 
-<div class="hero">
-  <span class="eyebrow">Topic index</span>
-  <h1>Every subject, one durable page each.</h1>
-  <p>Browse licensed imagery organized by subject — built for instructors, publishers, and science communicators, and kept current as our library grows.</p>
-  <div class="hero-search">
-    <input type="text" placeholder="Search topics — e.g. &quot;genetics&quot; or &quot;anatomy&quot;">
-    <button>SEARCH</button>
-  </div>
-</div>
-
-<div class="double-rule"></div>
-
-<div class="index-section">
-  <div class="index-head">
-    <h2>All topics</h2>
-    <span class="index-count">4 topic hubs</span>
-  </div>
-  <p class="index-note">Each hub is a living page — updated as we license new imagery and expand coverage, not a dated post.</p>
-
-  <div class="hub-grid">
-    <a href="#" class="hub-tile">
-      <div class="hub-tile-ribbon"></div>
-      <div class="hub-tile-eyebrow">42 images · 3 sections</div>
-      <h3>Cell Biology</h3>
-      <p>Cell structure, mitosis, and membrane transport, from micrograph to labeled diagram.</p>
-      <div class="hub-tile-tags"><span class="hub-tile-tag">Intro Bio</span><span class="hub-tile-tag">AP Biology</span></div>
-      <div class="hub-tile-footer"><span>/education/cellbiology</span><span>Updated Mar 2026</span></div>
-    </a>
-
-    <a href="#" class="hub-tile">
-      <div class="hub-tile-ribbon"></div>
-      <div class="hub-tile-eyebrow">28 images · 2 sections</div>
-      <h3>Genetics &amp; DNA</h3>
-      <p>Chromosome structure, gene editing, and inheritance patterns for the modern curriculum.</p>
-      <div class="hub-tile-tags"><span class="hub-tile-tag">AP Biology</span><span class="hub-tile-tag">Genetics</span></div>
-      <div class="hub-tile-footer"><span>/education/genetics</span><span>Updated Feb 2026</span></div>
-    </a>
-
-    <a href="#" class="hub-tile">
-      <div class="hub-tile-ribbon"></div>
-      <div class="hub-tile-eyebrow">51 images · 4 sections</div>
-      <h3>Human Anatomy</h3>
-      <p>Systems-level anatomy imagery for nursing, allied health, and intro physiology courses.</p>
-      <div class="hub-tile-tags"><span class="hub-tile-tag">Nursing</span><span class="hub-tile-tag">Physiology</span></div>
-      <div class="hub-tile-footer"><span>/education/anatomy</span><span>Updated Jan 2026</span></div>
-    </a>
-
-    <a href="#" class="hub-tile">
-      <div class="hub-tile-ribbon"></div>
-      <div class="hub-tile-eyebrow">19 images · 2 sections</div>
-      <h3>Microscopy Techniques</h3>
-      <p>How light, electron, and confocal microscopy differ, illustrated side by side.</p>
-      <div class="hub-tile-tags"><span class="hub-tile-tag">Lab Methods</span></div>
-      <div class="hub-tile-footer"><span>/education/microscopy</span><span>Updated Jan 2026</span></div>
-    </a>
-
-    <div class="hub-tile pending">
-      <h3>More topics coming</h3>
+<section class="hero">
+  <div class="wrap">
+    <h1>The science image library for higher education.</h1>
+    <p class="lede">One agreement gives your entire campus full access to Science Source: every student, every course, every LMS page. No per-image invoices, no rights clearance, no waiting on approval.</p>
+    <div class="ctas">
+      <a class="cta" href="mailto:education@sciencesource.com?subject=Institutional%20license%20inquiry">Request a quote</a>
+      <a class="cta secondary" href="#pricing">See pricing</a>
     </div>
   </div>
+</section>
+
+<div class="image-strip">
+  <div class="tile tile--white"><img src="https://www.sciencesource.com/pix/180/1804270_t.jpg" alt="Sample scientific image from the Science Source collection"></div>
+  <div class="tile tile--white"><img src="https://www.sciencesource.com/pix/148/1486764_t.jpg" alt="Sample scientific image from the Science Source collection"></div>
+  <div class="tile tile--black"><img src="https://www.sciencesource.com/pix/102/1023635_t.jpg" alt="Sample scientific image from the Science Source collection"></div>
 </div>
 
-<div class="related-band">
-  <div class="related-inner">
-    <p>Publishers and instructors: request a subject we haven't covered yet, or license imagery directly from the full Science Source catalog.</p>
-    <a href="#" class="related-cta">Request a topic →</a>
+<section>
+  <div class="wrap">
+    <p class="kicker">What it is</p>
+    <h2>Built for coursework, not just a catalog.</h2>
+    <p>Science Source has spent decades building a library of scientific and medical imagery: anatomy and physiology, environmental science, cell and molecular biology, microscopy, natural history, and the history of science. In fact, your students and faculty have almost certainly encountered our images in major textbooks and their digital counterparts.</p>
+<p>Now, students and instructors come to us directly to license imagery to illustrate lectures, slides, and course packets. The Education license simply streamlines that access, campus-wide, and frees the university community from worrying about one-off licensing and rights clearance.</p>
+    <p>It's the same collection your faculty may already be citing informally, now covered under a single institutional agreement your library controls.</p>
   </div>
-</div>
+</section>
 
-<footer class="site-footer">
-  <span>sciencesource.com/education</span>
-  <span>Index regenerated automatically on each topic publish</span>
+<hr class="rule">
+
+<section>
+  <div class="wrap wrap--wide">
+    <p class="kicker">Why libraries make the switch</p>
+    <h2>Replace one-off licensing with one agreement.</h2>
+    <div class="compare">
+      <div class="without">
+        <h3>Without an institutional license</h3>
+        <ul>
+          <li>Faculty license images individually, on personal cards</li>
+          <li>No record of what's been used, or where</li>
+          <li>Reuse in a new course means clearing rights again</li>
+          <li>Library has no visibility into the spend</li>
+        </ul>
+      </div>
+      <div class="with">
+        <h3>With Science Source Education</h3>
+        <ul>
+          <li>Unlimited use across the whole collection, campus-wide</li>
+          <li>Covers coursework, the LMS, slides, and course packets</li>
+          <li>One flat annual cost, billed to the library</li>
+          <li>No re-clearing rights for repeat or future use</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <p class="kicker">How it works</p>
+    <h2>Three steps, start to finish.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <div>
+          <h3>We send a quote based on enrollment</h3>
+          <p>Tell us your FTE enrollment and we'll send a straightforward, per-student annual quote, with no negotiation theater.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <div>
+          <h3>You sign a standard license agreement</h3>
+          <p>One document, written in plain terms, sized for a library budget cycle rather than a corporate legal review.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <div>
+          <h3>Campus-wide access, same day</h3>
+          <p>Every student and instructor can search and use the full library immediately, with no seat limits and no individual logins to manage.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <p class="kicker">Pricing</p>
+    <h2>Priced per student, not per download, in consideration of your budget.</h2>
+ 
+    <p>That's the whole model. No tiers to compare, no usage caps to track, no per-image invoices landing on a department card. Your exact rate depends on total enrollment. Send us that number and we'll send a quote back the same week.</p>
+    <p class="fine">Quotes are issued directly to the library. Multi-year and consortium pricing available on request.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">Questions</p>
+    <h2>What librarians usually ask</h2>
+    <details open>
+      <summary>What's actually in the collection?</summary>
+      <p>Scientific and medical imagery spanning anatomy and physiology, cell and molecular biology, microscopy, natural history, and the history of science: the kind of material instructors reach for to illustrate lectures, textbooks, and lab material.</p>
+    </details>
+    <details>
+      <summary>Who on campus is covered?</summary>
+      <p>Every enrolled student and instructor, across every department and course, not a seat-limited login. Use extends to the LMS, slides, printed course packets, and other instructional material.</p>
+    </details>
+    <details>
+      <summary>How is the price actually calculated?</summary>
+      <p>Total FTE enrollment multiplied by the per-student rate, billed annually. There's no separate charge per image, per download, or per course.</p>
+    </details>
+    <details>
+      <summary>Do we need to track individual image use?</summary>
+      <p>No. Once the license is active, faculty and students can use any image in the collection without submitting individual rights requests.</p>
+    </details>
+    <details>
+      <summary>How long does setup take?</summary>
+      <p>Once the agreement is signed, access opens the same day, with no separate technical rollout or account provisioning per user.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="kicker">Get in touch</p>
+    <h2>Send us your enrollment number, get a quote back this week.</h2>
+    <p>If you just missed a call from our team, or want to talk through how this would work at your institution, reach out directly. No forms, no phone tree.</p>
+    <p class="contact-line">Julie Sloane · <a href="mailto:education@sciencesource.com">education@sciencesource.com</a> · 212-758-3420</p>
+    <div class="meta">
+      <span>Science Source · sciencesource.com</span>
+      <span>Education licensing for colleges &amp; universities</span>
+    </div>
+  </div>
 </footer>
 
 </body>
